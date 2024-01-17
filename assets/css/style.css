@@ -40,7 +40,7 @@ body {
       margin-top: 60px;
       text-align: center;
     }
-    .container {
+    .product-box {
         padding: 20px;
         display: flex;
         justify-content: center;
@@ -76,7 +76,7 @@ body {
         padding: 12px;
     }
     @media only screen and (max-width: 600px) {
-      .container {
+      .product-box {
         padding: 10px;
         display: flex;
         flex-direction: column;
