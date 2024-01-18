@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cream Store</title>
+    <style>
+        body {
+            margin: 0;
+
+        }
+        .container {
+            width: 900px;
+            max-width: 90vw;
+            margin: auto;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .product-list .product-item img {
+            width: 90%;
+            filter: drop-shadow(0 50px 20px #0009);
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .product-list .product-item {
+            background-color: #eeeee6;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .product-list .product-item h2 {
+            font-weight: 500;
+            font-size: large;
+        }
+        .product-list .product-item .price {
+            letter-spacing: 7px;
+            font-size: small;
+        }
+        .product-list .product-item button {
+            background-color: #353432;
+            color: #eee;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- grid start -->
+
+
+
+    <div class="container">
+        <div class="product-list">
+            <div class="product-item">
+                <img src="assets/img/p1.avif" alt="product">
+                <h2>Name</h2>
+                <div class="price">&pound;500</div>
+                <button class="addcart">Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- grid end -->
+</body>
+
+</html>

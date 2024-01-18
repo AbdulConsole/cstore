@@ -176,8 +176,16 @@ body.showCart .container {
 
 
 
-
+/* Mobo */
 @media only screen and (max-width: 600px) {
+    body {
+        background-color: #eee1;
+    }
+    #container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
     .product-box {
         padding: 10px;
         display: flex;
@@ -195,4 +203,9 @@ body.showCart .container {
     .card>img {
         width: 100%;
     }
+}
+
+/* PC */
+@media screen and (max-width: 992px) {
+    
 }
