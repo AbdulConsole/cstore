@@ -36,6 +36,34 @@ const products = {
       url: "assets/img/p6.avif"
     }
   };
+let iconCart = document.querySelector('.icon-cart');
+let body = document.querySelector('body');
+let closeCart = document.querySelector('.close');
+// let listProductHTML = 
+
+let listProducts = [];
+
+iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart');
+})
+closeCart.addEventListener('click', () => {
+    body.classList.remove('showCart');
+})
+
+const initApp = () => {
+    //get data from json file
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        listProducts = data;
+        console.log(listProducts);
+    })
+}
+
+initApp();
+
+
+
 
 
 // A function to create html element for each products

@@ -10,6 +10,7 @@ body {
     justify-content: center;
     width: 100%;
     position: absolute;
+    transition: transform .5s;
 }
 
 .top {
@@ -109,9 +110,15 @@ h1 {
     background-color: #353432;
     color: #eee;
     position: fixed;
-    inset: 0 0 0 auto;
+    inset: 0 -400px 0 auto;
     display: grid;
     grid-template-rows: 70px 1fr 70px;
+}
+body.showCart .cartTab{
+    inset: 0 0 0 auto;
+}
+body.showCart .container {
+    transform: translateX(-250px);
 }
 .cartTab > h1 {
     padding: 20px;
@@ -133,9 +140,7 @@ h1 {
     background-color: red;
 }
 .cartTab .listCart .item img {
-    width: 90%;
-    border-radius: 4px;
-    padding: 5%;
+    width: 100%;
 }
 .cartTab .listCart .item {
     display: grid;
@@ -144,6 +149,29 @@ h1 {
     text-align: center;
     align-items: center;
 }
+.listCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+}
+.listCart .item:nth-child(even) {
+    background-color: #eee1;
+}
+.listCart {
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar {
+    width: 0;
+}
+
 
 
 

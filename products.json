@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Body Oil",
+        "price": 15.99,
+        "image": "assets/img/p1.avif"
+    },
+    {
+        "id": 2,
+        "name": "Organic Oil",
+        "price": 17.99,
+        "image": "assets/img/p2.avif"
+    },
+    {
+        "id": 3,
+        "name": "Elsa Ointment",
+        "price": 14.99,
+        "image": "assets/img/p3.avif"
+    },
+    {
+        "id": 4,
+        "name": "ILCE-7M2",
+        "price": 11.99,
+        "image": "assets/img/p4.avif"
+    },
+    {
+        "id": 5,
+        "name": "Cocooil",
+        "price": 12.00,
+        "image": "assets/img/p5.avif"
+    },
+    {
+        "id": 6,
+        "name": "Natural X",
+        "price": 19.99,
+        "image": "assets/img/p6.avif"
+    }
+]
