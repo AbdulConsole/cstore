@@ -1,30 +1,36 @@
 const products = {
     1: {
+      id: 1,
       name: "Body Oil",
-      price: "19.99",
+      price: "15.99",
       url: "assets/img/p1.avif"
     },
     2: {
+      id: 2,
       name: "Organic Cosmetics",
       price: "17.99",
       url: "assets/img/p2.avif"
     },
     3: {
-      name: "Elsa Onitment",
+      id: 3,
+      name: "Elsa Ointment",
       price: "14.99",
       url: "assets/img/p3.avif"
     },
     4: {
+      id: 4,
       name: "ILCE-7M2",
-      price: "17.99",
+      price: "11.99",
       url: "assets/img/p4.avif"
     },
     5: {
+      id: 5,
       name: "Cocooil",
       price: "12.0",
       url: "assets/img/p5.avif"
     },
     6: {
+      id: 6,
       name: "Natural X",
       price: "19.99",
       url: "assets/img/p6.avif"
@@ -64,5 +70,12 @@ function displayProduct() {
     }
 }
 
+// A function to add product to cart
+function addToCart(productId) {
+    console.log(`Product added to cart with ID: ${productId}`);
+}
+
+
+
 // Call the display function here
-window.onload = displayProduct();
+window.onload = displayProduct;
