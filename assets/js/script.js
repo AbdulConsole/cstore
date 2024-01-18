@@ -37,6 +37,12 @@ const initApp = () => {
     .then(data => {
         listProducts = data;
         displayProduct();
+
+        //get cart from memory
+        if (localStorage.getItem('cart')) {
+            carts = JSON.parse(localStorage.getItem('cart'));
+            displayCart();
+        }
     })
 }
 
@@ -131,4 +137,9 @@ function addToCart(product_id) {
     }
     // console.log(carts);
     displayCart();
+    addCartToMemory();
+}
+// A function to save user cart items
+function addCartToMemory() {
+    localStorage.setItem('cart', JSON.stringify(carts));
 }
