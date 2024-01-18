@@ -1,8 +1,11 @@
 let iconCart = document.querySelector('.icon-cart');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
-// let addCart = document.querySelector('.addCart');
+let btn_addCart = document.querySelector('.addCart');
+
 const productContainer = document.querySelector("#container");
+// pro
+
 let listProducts = [];
 
 
@@ -13,13 +16,15 @@ iconCart.addEventListener('click', () => {
 closeCart.addEventListener('click', () => {
     body.classList.remove('showCart');
 })
+
+// addCart.addEventListener('click', () => {
+//     console.log(1);
+// })
 productContainer.addEventListener('click', (event) => {
     let positionClick = event.target;
     if (positionClick.classList.contains('addCart')) {
-        let product_id = positionClick.parentElement.dataset.id;
+        let product_id = positionClick.parentElement.parentElement.parentElement.dataset.id;
         alert(product_id);
-        alert(parentElement);
-        // alert(1);
     }
 })
 
@@ -58,7 +63,7 @@ function createProductElement(product) {
             <img src="${product.image}" alt="${product.name}">
             <div class="row">
                 <h2>&pound;${product.price}</h2>
-                <button class="addCart">Add to cart</button>
+                <button class="addCart" >Add to cart</button>
             </div>
         </div>
     `;
@@ -78,4 +83,5 @@ function displayProduct() {
 // A function to add product to cart
 function addToCart(productId) {
     console.log(`Product added to cart with ID: ${productId}`);
+    alert(productId);
 }
