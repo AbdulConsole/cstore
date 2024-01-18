@@ -83,8 +83,10 @@ function displayProduct() {
 // A function to display Carted products 
 function displayCart() {
     listCart.innerHTML = '';
+    let totalQuantity = 0;
     if(carts.length > 0) {
         carts.forEach(cart => {
+            totalQuantity = totalQuantity + cart.quantity;
             let newCart = document.createElement('div');
             newCart.classList.add('item');
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
@@ -96,7 +98,7 @@ function displayCart() {
                 <div class="name">
                 ${info.name}
                 </div>
-                <div class="totalPrice">${info.price}</div>
+                <div class="totalPrice">${info.price * cart.quantity}</div>
                 <div class="quantity">
                     <span class="minus"><</span>
                     <span>${cart.quantity}</span>
@@ -106,6 +108,7 @@ function displayCart() {
             listCart.appendChild(newCart);
         })
     }
+    counter.textContent = totalQuantity;
 }
 // A function to add product to cart
 function addToCart(product_id) {
