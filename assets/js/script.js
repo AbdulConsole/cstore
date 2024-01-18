@@ -1,3 +1,6 @@
+//Initialize script
+initApp();
+
 let iconCart = document.querySelector('.icon-cart');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
@@ -5,7 +8,6 @@ let btn_addCart = document.querySelector('.addCart');
 let productContainer = document.querySelector('#container');
 let listCart = document.querySelector('.listCart');
 let counter = document.querySelector('.cart span')
-
 let listProducts = [];
 let carts = [];
 
@@ -17,10 +19,6 @@ iconCart.addEventListener('click', () => {
 closeCart.addEventListener('click', () => {
     body.classList.remove('showCart');
 })
-
-// addCart.addEventListener('click', () => {
-//     console.log(1);
-// })
 productContainer.addEventListener('click', (event) => {
     let positionClick = event.target;
     if (positionClick.classList.contains('addCart')) {
@@ -28,25 +26,21 @@ productContainer.addEventListener('click', (event) => {
         addToCart(product_id);
     }
 })
-
-
-const initApp = () => {
-    //get data from json file
-    fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-        listProducts = data;
-        displayProduct();
-
-        //get cart from memory
-        if (localStorage.getItem('cart')) {
-            carts = JSON.parse(localStorage.getItem('cart'));
-            displayCart();
+listCart.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = 'minus';
+        if (positionClick.classList.contains('plus')) {
+            type = 'plus';
         }
-    })
-}
+        changeQuantity(product_id, type);
+    }
+})
 
-initApp();
+
+
+
 
 
 
@@ -95,6 +89,7 @@ function displayCart() {
             totalQuantity = totalQuantity + cart.quantity;
             let newCart = document.createElement('div');
             newCart.classList.add('item');
+            newCart.dataset.id = cart.product_id;
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
             let info = listProducts[positionProduct];
             newCart.innerHTML = `
@@ -142,4 +137,42 @@ function addToCart(product_id) {
 // A function to save user cart items
 function addCartToMemory() {
     localStorage.setItem('cart', JSON.stringify(carts));
+}
+// Add and Minus quantity
+function changeQuantity(product_id, type) {
+    let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+    if (positionItemInCart >= 0) {
+        switch (type) {
+            case 'plus':
+                carts[positionItemInCart].quantity += 1;
+                break;
+        
+            default:
+                let valueChange = carts[positionItemInCart].quantity - 1;
+                if (valueChange > 0) {
+                    carts[positionItemInCart].quantity = valueChange;
+                } else {
+                    carts.splice(positionItemInCart, 1);
+                }
+                break;
+        }
+    }
+    addCartToMemory();
+    displayCart();
+}
+// Launcher Function
+function initApp() {
+    //get data from json file
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        listProducts = data;
+        displayProduct();
+
+        //get cart from memory
+        if (localStorage.getItem('cart')) {
+            carts = JSON.parse(localStorage.getItem('cart'));
+            displayCart();
+        }
+    })
 }
