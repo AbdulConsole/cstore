@@ -102,7 +102,7 @@ h1 {
 .addCart:hover {
     color: #ddd;
     background: #333;
-    padding: 12px;
+    padding: 16px;
 }
 
 .cartTab {
@@ -178,12 +178,7 @@ body.showCart .container {
 
 /* Mobo */
 @media only screen and (max-width: 600px) {
-    body {
-        background-color: #eee1;
-    }
     #container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         width: 90%;
     }
     .product-box {
@@ -196,8 +191,7 @@ body.showCart .container {
 
     .card {
         padding: 5px;
-        width: 80%;
-        /*overflow: hidden;*/
+        width: 90%;
     }
 
     .card>img {
@@ -205,7 +199,45 @@ body.showCart .container {
     }
 }
 
+/* Tab */
+@media (601px <= width <= 1100px) {
+    #container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+    .card {
+        width: 70%;
+    }
+    .card>img {
+        width: 100%;
+    }
+    .card h1 {
+        margin-top: -10px;
+        line-height: 1;
+        font-size: 18px;
+    }
+    .card .row h2 {
+        font-size: 16px;
+    }
+    .card .row button {
+        padding: 3px;
+        font-size: 18px;
+    }
+}
+
 /* PC */
-@media screen and (max-width: 992px) {
+@media (width >= 1100px)  {
+    #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+    }
+    .card {
+        width: 90%;
+    }
+    .card>img {
+        width: 100%;
+    }
     
 }
