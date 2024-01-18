@@ -1,6 +1,7 @@
 //Initialize script
 initApp();
 
+// Declaration of Variables, Arrays and Grabing of DOMs
 let iconCart = document.querySelector('.icon-cart');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
@@ -11,8 +12,7 @@ let counter = document.querySelector('.cart span')
 let listProducts = [];
 let carts = [];
 
-
-
+// The Event Handlers
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
@@ -38,20 +38,7 @@ listCart.addEventListener('click', (event) => {
     }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//The functions
 // A function to create html element for each products
 function createProductElement(product) {
     const productBox  = document.createElement("div");
