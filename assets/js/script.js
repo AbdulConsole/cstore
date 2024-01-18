@@ -62,7 +62,7 @@ function createProductElement(product) {
             <h1>${product.name}</h1>
             <img src="${product.image}" alt="${product.name}">
             <div class="row">
-                <h2>&pound;${product.price}</h2>
+                <h2>₦${product.price}</h2>
                 <button class="addCart" >Add to cart</button>
             </div>
         </div>
