@@ -2,11 +2,12 @@ let iconCart = document.querySelector('.icon-cart');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
 let btn_addCart = document.querySelector('.addCart');
-
-const productContainer = document.querySelector("#container");
-// pro
+let productContainer = document.querySelector('#container');
+let listCart = document.querySelector('.listCart');
+let counter = document.querySelector('.cart span')
 
 let listProducts = [];
+let carts = [];
 
 
 
@@ -24,7 +25,7 @@ productContainer.addEventListener('click', (event) => {
     let positionClick = event.target;
     if (positionClick.classList.contains('addCart')) {
         let product_id = positionClick.parentElement.parentElement.parentElement.dataset.id;
-        alert(product_id);
+        addToCart(product_id);
     }
 })
 
@@ -35,7 +36,6 @@ const initApp = () => {
     .then(response => response.json())
     .then(data => {
         listProducts = data;
-        // console.log(listProducts);
         displayProduct();
     })
 }
@@ -80,8 +80,52 @@ function displayProduct() {
         }
     }
 }
+// A function to display Carted products 
+function displayCart() {
+    listCart.innerHTML = '';
+    if(carts.length > 0) {
+        carts.forEach(cart => {
+            let newCart = document.createElement('div');
+            newCart.classList.add('item');
+            let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+            let info = listProducts[positionProduct];
+            newCart.innerHTML = `
+                <div class="image">
+                    <img src="${info.image}" alt="${info.name}">
+                </div>
+                <div class="name">
+                ${info.name}
+                </div>
+                <div class="totalPrice">${info.price}</div>
+                <div class="quantity">
+                    <span class="minus"><</span>
+                    <span>${cart.quantity}</span>
+                    <span class="plus">></span>
+                </div>
+            `;
+            listCart.appendChild(newCart);
+        })
+    }
+}
 // A function to add product to cart
-function addToCart(productId) {
-    console.log(`Product added to cart with ID: ${productId}`);
-    alert(productId);
+function addToCart(product_id) {
+    console.log(`Product added to cart with ID: ${product_id}`);
+    // alert(product_id);
+    let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);
+    if (carts.length <= 0) {
+        
+        carts = [{
+            product_id: product_id,
+            quantity: 1
+        }]
+    } else if (positionThisProductInCart < 0) {
+        carts.push({
+            product_id: product_id,
+            quantity: 1
+        })
+    } else {
+        carts[positionThisProductInCart].quantity += 1;
+    }
+    // console.log(carts);
+    displayCart();
 }
