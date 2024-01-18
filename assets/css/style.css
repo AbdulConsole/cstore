@@ -89,7 +89,7 @@ h1 {
     width: 500px;
 }
 
-.add-to-cart {
+.addCart {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -99,7 +99,7 @@ h1 {
     cursor: pointer;
 }
 
-.add-to-cart:hover {
+.addCart:hover {
     color: #ddd;
     background: #333;
     padding: 12px;
