@@ -2,37 +2,85 @@
     {
         "id": 1,
         "name": "Nigerian Oil",
-        "price": 7000,
+        "price": 500,
         "image": "assets/img/p1.avif"
     },
     {
         "id": 2,
         "name": "Organic Oil",
-        "price": 14500,
+        "price": 450,
         "image": "assets/img/p2.avif"
     },
     {
         "id": 3,
         "name": "X Ointment",
-        "price": 12900,
+        "price": 120,
         "image": "assets/img/p3.avif"
     },
     {
         "id": 4,
         "name": "ILCE-7M2",
-        "price": 3000,
+        "price": 300,
         "image": "assets/img/p4.avif"
     },
     {
         "id": 5,
         "name": "Cocooil",
-        "price": 2500,
+        "price": 400,
         "image": "assets/img/p5.avif"
     },
     {
         "id": 6,
         "name": "Natural X",
-        "price": 6000,
+        "price": 550,
         "image": "assets/img/p6.avif"
+    },
+    {
+        "id": 7,
+        "name": "Mx Oil",
+        "price": 600,
+        "image": "assets/img/p7.avif"
+    },
+    {
+        "id": 8,
+        "name": "Coconut",
+        "price": 500,
+        "image": "assets/img/p8.avif"
+    },
+    {
+        "id": 9,
+        "name": "Fre",
+        "price": 50,
+        "image": "assets/img/p9.avif"
+    },
+    {
+        "id": 10,
+        "name": "Chamara",
+        "price": 100,
+        "image": "assets/img/p10.avif"
+    },
+    {
+        "id": 11,
+        "name": "Yogandha",
+        "price": 250,
+        "image": "assets/img/p11.avif"
+    },
+    {
+        "id": 12,
+        "name": "Skin Lemon",
+        "price": 750,
+        "image": "assets/img/p12.avif"
+    },
+    {
+        "id": 13,
+        "name": "Avocado mix",
+        "price": 300,
+        "image": "assets/img/p13.avif"
+    },
+    {
+        "id": 14,
+        "name": "Massage Oil",
+        "price": 150,
+        "image": "assets/img/p14.avif"
     }
 ]

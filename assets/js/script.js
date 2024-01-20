@@ -1,4 +1,8 @@
 //Initialize script
+while (true) {
+    initApp();
+    
+}
 initApp();
 
 // Declaration of Variables, Arrays and Grabing of DOMs
@@ -9,8 +13,10 @@ let btn_addCart = document.querySelector('.addCart');
 let productContainer = document.querySelector('#container');
 let listCart = document.querySelector('.listCart');
 let counter = document.querySelector('.cart span')
+// let spanSum = document.querySelector('.cartTab h1 span');
 let listProducts = [];
 let carts = [];
+let totalCost = 0;
 
 // The Event Handlers
 iconCart.addEventListener('click', () => {
@@ -71,6 +77,7 @@ function displayProduct() {
 function displayCart() {
     listCart.innerHTML = '';
     let totalQuantity = 0;
+    
     if(carts.length > 0) {
         carts.forEach(cart => {
             totalQuantity = totalQuantity + cart.quantity;
@@ -98,13 +105,22 @@ function displayCart() {
     }
     counter.textContent = totalQuantity;
 }
+// A function to sum all products total
+function displaySum() {
+    carts.forEach(item => {
+        const matchingProduct = listProducts.find(product => product.id.toString() === item.product_id);
+        if (matchingProduct) {
+            totalCost += matchingProduct.price * item.quantity;
+        }
+    });
+
+    console.log("Total Cost:", totalCost);
+}
+
 // A function to add product to cart
 function addToCart(product_id) {
-    console.log(`Product added to cart with ID: ${product_id}`);
-    // alert(product_id);
     let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);
     if (carts.length <= 0) {
-        
         carts = [{
             product_id: product_id,
             quantity: 1

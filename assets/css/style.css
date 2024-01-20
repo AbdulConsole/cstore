@@ -125,6 +125,13 @@ body.showCart .container {
     margin: 0;
     font-weight: 300;
 }
+.cartTab > h1 > span {
+    color: rgba(13, 9, 255);
+}
+.cartTab > h1 > span::before {
+    content: '#';
+    color: rgba(13, 9, 255, .5);
+}
 .cartTab .btn {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
