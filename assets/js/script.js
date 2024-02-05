@@ -1,8 +1,8 @@
 //Initialize script
-while (true) {
+/*while (true) {
     initApp();
     
-}
+}*/
 initApp();
 
 // Declaration of Variables, Arrays and Grabing of DOMs
